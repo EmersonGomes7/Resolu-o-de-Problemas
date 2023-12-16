@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(){
+    char nome[20];
+    double vendas;
+    double salario;
+    fgets(nome,20,stdin);
+    scanf("%lf",&salario);
+    scanf("%lf",&vendas);
+    printf("TOTAL = R$ %.2lf\n",0.15*vendas+salario);
+    return 0;
+}
