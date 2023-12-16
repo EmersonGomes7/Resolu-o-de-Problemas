@@ -6,17 +6,9 @@ int main(){
     int quantidade2;
     double valor1;
     double valor2;
-    scanf("%d",&codigo1);
+    scanf("%d %d %lf",&codigo1,&quantidade1,&valor1);
     getchar();
-    scanf("%d",&quantidade1);
-    getchar();
-    scanf("%lf",&valor1);
-    getchar();
-    scanf("%d",&codigo2);
-    getchar();
-    scanf("%d",&quantidade2);
-    getchar();
-    scanf("%lf",&valor2);
+    scanf("%d %d %lf",&codigo2,&quantidade2,&valor2);
     printf("VALOR A PAGAR: R$ %.2lf\n",valor1*quantidade1+valor2*quantidade2);
     return 0;
 }
