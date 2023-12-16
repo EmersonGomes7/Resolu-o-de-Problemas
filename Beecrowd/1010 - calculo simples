@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(){
+    int codigo1,codigo2;
+    int quantidade1;
+    int quantidade2;
+    double valor1;
+    double valor2;
+    scanf("%d",&codigo1);
+    getchar();
+    scanf("%d",&quantidade1);
+    getchar();
+    scanf("%lf",&valor1);
+    getchar();
+    scanf("%d",&codigo2);
+    getchar();
+    scanf("%d",&quantidade2);
+    getchar();
+    scanf("%lf",&valor2);
+    printf("VALOR A PAGAR: R$ %.2lf\n",valor1*quantidade1+valor2*quantidade2);
+    return 0;
+}
