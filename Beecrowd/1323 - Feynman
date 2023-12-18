@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(){
+   int n=1,resultado=0; 
+   while(n!=0){
+    scanf("%d",&n);
+    if(n==0)
+        break;
+    else{
+        for(int i=1;i<=n;i++){
+        resultado+=i*i;
+        }
+        printf("%d\n",resultado);
+        resultado=0;
+    }
+    
+   }
+
+    return 0;
+}
