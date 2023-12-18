@@ -1,0 +1,79 @@
+#include <stdio.h>
+
+//para resolver o desafio foi necessário vericar se os dois números recebidos eram ou não primps e depois fiz o algoritmo de euclides para calcular o mdc
+int main(){
+   int n,j1,j2,r1,r2,menor,maior,cont=0,cont2=0;
+   scanf("%d",&n);
+   for(int i=0;i<n;i++){
+    scanf("%d %d",&j1,&j2);
+    if(j1==1 && j2!=0)
+        printf("%d\n",j2);
+    else if(j1!=0 && j2==1)
+        printf("%d\n",j1);
+    else if(j1==0 && j2==0)
+        printf("0\n");
+    else if(j2==0 || j1==0)
+        printf("0\n");
+    else{
+        if(j1==j2)
+            printf("%d\n",j1);
+        else{
+            
+            if(j1<0)
+               j1=j1*-1;
+            if(j2<0)
+                j2=j2*-1; 
+
+            for(int i=2;i<j1;i++){
+                if(j1 % i==0){
+                    cont++;
+                    break;
+                }
+            }
+            for(int i=2;i<j2;i++){
+                if(j2 % i ==0){
+                    cont2++;
+                    break;
+                }
+            }
+            
+            if(cont==0 || cont2==0){
+                printf("1\n");
+            }else{
+                    if(j1<=j2){
+                            menor=j1; 
+                            maior=j2;       
+                    }else{
+                        maior=j1;
+                        menor=j2;    
+                    
+                    }
+                    r1=maior % menor;
+                        if(r1==0){
+                            printf("%d\n",menor);
+                        }else{
+                            r2=menor % r1;
+                            if(r2==0){
+                                printf("%d\n",r1);
+                            }  
+                            else{
+                                while(r1!=0 && r2!=0){  
+                                    r1=r1 % r2;
+                                    if(r1==0){
+                                        printf("%d\n",r2);
+                                        break;
+                                    }
+                                    r2=r2 % r1;
+                                    if(r2==0){
+                                        printf("%d\n",r1);
+                                        break;                                 
+                                }
+                            }
+                        }   
+                    }
+                }
+            }                      
+        }
+   }
+    return 0;
+}
