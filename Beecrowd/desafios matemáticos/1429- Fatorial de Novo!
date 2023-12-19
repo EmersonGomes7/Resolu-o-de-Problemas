@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int fatorial(int n){
+    if(n==1 || n==0)
+        return 1;
+    else{
+        return n * fatorial(n-1);
+    }   
+}
+int main(){
+   int n=1,resultado=0;
+    while(n!=0){
+        scanf("%d",&n);
+        if(n>=10000 && n<100000){
+            resultado+=(n/10000)*fatorial(5);
+            resultado+=((n-((n/10000)*10000))/1000)*fatorial(4);
+            resultado+=((n-((n/1000)*1000))/100)*fatorial(3);
+            resultado+=((n-((n/100)*100))/10)*fatorial(2);
+            resultado+=n-((n/10)*10);
+            printf("%d\n",resultado);
+
+        }else if(n>=1000 && n<10000){
+            resultado+=(n/1000)*fatorial(4);
+            resultado+=((n-((n/1000)*1000))/100)*fatorial(3);
+            resultado+=((n-((n/100)*100))/10)*fatorial(2);
+            resultado+=n-((n/10)*10);
+            printf("%d\n",resultado);
+        }else if(n>=100 && n<1000){
+            resultado+=(n/100)*fatorial(3);
+            resultado+=((n-((n/100)*100))/10)*fatorial(2);
+            resultado+=n-((n/10)*10);
+            printf("%d\n",resultado);
+        }else if(n>=10 && n<100){
+            resultado+=(n/10)*fatorial(2);  
+            resultado+=n-((n/10)*10);
+            printf("%d\n",resultado);
+        }else if(n>=1 && n<10){
+            resultado=n;
+            printf("%d\n",resultado);
+        }
+        resultado=0;
+    }
+    return 0;
+}
