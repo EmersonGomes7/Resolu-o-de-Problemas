@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(){
+    int hi,mi,hf,mf,horas=0,minutos=0;
+    scanf("%d%d%d%d",&hi,&mi,&hf,&mf);
+     minutos=((hf*60)+mf)-((hi*60)+mi);
+
+     if(minutos<=0){
+          minutos+=24*60;
+     }
+     while(1){
+          if(minutos>=60){
+               horas++;
+               minutos-=60;
+          }else{
+               break;
+          }
+     }
+     
+     
+    printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n",horas,minutos);
+return 0;
+
+} 
+
