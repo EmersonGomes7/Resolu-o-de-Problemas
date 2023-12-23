@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+
+int main(){
+   float imposto=0,renda;
+   scanf("%f",&renda);
+   if(renda<=2000.00){
+     printf("Isento\n");
+   }else{
+     if(renda>4500.00){
+          imposto+=(renda-4500.00)*0.28;
+          renda=4500.00;
+     }if(renda>=3000.01 && renda<=4500.00){
+          imposto+=(renda-3000.00)*0.18;
+          renda=3000.00;
+     }if(renda>=2000.01 && renda<=3000.00){
+          imposto+=(renda-2000.01)*0.08;
+          renda=2000.00;
+     }
+     printf("R$ %.2f\n",imposto);
+   }
+return 0;
+
+} 
+
+
+
+
+
