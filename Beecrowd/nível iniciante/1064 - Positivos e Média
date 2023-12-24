@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int main(){
+  float a,b,c,d,e,f,numerador=0;
+  int cont=0;
+  scanf("%f%f%f%f%f%f",&a,&b,&c,&d,&e,&f);
+  if(a>0){
+    cont++;
+    numerador+=a;
+  }if(b>0){
+    cont++;
+    numerador+=b;
+  }if(c>0){
+    cont++;
+    numerador+=c;
+  }if(d>0){
+    cont++;
+    numerador+=d;
+  }if(e>0){
+    cont++;
+    numerador+=e;
+  }if(f>0){
+    cont++;
+    numerador+=f;
+  }
+
+  printf("%d valores positivos\n%.1f\n",cont,(numerador/(cont*1.0)));
+return 0;
+
+} 
+
+
+
+
+
