@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+int main(){
+  int di,di2,hi,mi,si,df,df2,hf,mf,sf,dias=0,segundos,horas=0,minutos=0;
+  char dia[10],diaFinal[10],horarioInicio[15],horarioFinal[15];
+  fgets(dia,10,stdin);
+  fgets(horarioInicio,15,stdin);
+  fgets(diaFinal,10,stdin);
+  fgets(horarioFinal,15,stdin);
+  
+  di=dia[4]-'0';
+  if(isdigit(dia[5])){
+    di2=dia[5]-'0';
+    di=(di*10)+di2;
+  }
+  hi=((horarioInicio[0]-'0')*10)+(horarioInicio[1]-'0');
+  mi=((horarioInicio[5]-'0')*10)+(horarioInicio[6]-'0');
+  si=((horarioInicio[10]-'0')*10)+(horarioInicio[11]-'0');
+  df=diaFinal[4]-'0';
+  if(isdigit(diaFinal[5])){
+    df2=diaFinal[5]-'0';
+    df=(df*10)+df2;
+  }
+  hf=((horarioFinal[0]-'0')*10)+(horarioFinal[1]-'0');
+  mf=((horarioFinal[5]-'0')*10)+(horarioFinal[6]-'0');
+  sf=((horarioFinal[10]-'0')*10)+(horarioFinal[11]-'0');
+
+  segundos=((df-di)*24*60*60)-((hi*3600)+(mi*60)+si)+((hf*3600)+(mf*60)+sf);
+
+  while(segundos>=60){
+      if(segundos>=(24*60*60)){
+        dias++;
+        segundos-=(24*60*60);
+      }else if(segundos>=(60*60)){
+        horas++;
+        segundos-=(60*60);
+      }else if(segundos>=60){
+        minutos++;
+        segundos-=60;
+      }
+  }
+  printf("%d dia(s)\n%d hora(s)\n%d minuto(s)\n%d segundo(s)\n",dias,horas,minutos,segundos);
+return 0;
+
+} 
+
+
+
+
+
