@@ -1,0 +1,18 @@
+//para imprimir corretamente no windows é necessário usar __mingw_printf("%.Lf\n",resultado). para linux e mac, funciona apenas com printf;
+#include <stdio.h>
+
+long double fatorial(long double n){
+    if(n==0 || n==1)
+        return 1;
+    else    
+        return n * fatorial(n-1);
+}
+int main() {
+    int m,n;
+    while(scanf("%d%d",&m,&n)!=EOF){
+        long double resultado=fatorial(m)+fatorial(n);
+        printf("%.Lf\n",resultado);
+        resultado=0;
+    }
+    return 0;
+}
