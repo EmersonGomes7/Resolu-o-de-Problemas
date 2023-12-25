@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int n, m;
+
+    while (1) {
+        scanf("%d %d", &n, &m);
+        if (n <= 0 || m <= 0) {
+            break;
+        }
+
+        int menor, maior, cont = 0;
+
+        if (n > m) {
+            maior = n;
+            menor = m;
+        } else {
+            maior = m;
+            menor = n;
+        }
+
+        for (menor; menor <= maior; menor++) {
+            printf("%d ", menor);
+            cont += menor;
+        }
+        printf("Sum=%d\n", cont);
+    }
+
+    return 0;
+}
