@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int a,iteracoes;
+    scanf("%d",&a);
+    iteracoes=a+12;
+    for(a;a<iteracoes;a++){
+        if(a%2!=0)
+         printf("%d\n",a);        
+    }
+
+    return 0;
+}
