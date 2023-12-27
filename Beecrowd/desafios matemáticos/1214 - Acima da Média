@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    char c='%';
+    int n,aluno,acumulador=0,acimaMedia=0;
+    float media;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        scanf("%d",&aluno);
+        int vet[aluno];
+        for(int i=0;i<aluno;i++){
+            scanf("%d",&vet[i]);
+            acumulador+=vet[i];
+        }
+       media=acumulador/aluno*1.0;
+        for(int i=0;i<aluno;i++){
+            if(vet[i]>media){
+                acimaMedia++;
+            }
+        }
+        printf("%.3f%c\n",(float)((acimaMedia/(aluno*1.0))*100),c);
+        acimaMedia=0;
+        acumulador=0;
+    }
+    return 0;
+}
