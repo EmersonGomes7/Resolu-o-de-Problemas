@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+    int n,perguntas;
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+        scanf("%d",&perguntas);
+        printf("resposta %d: %d\n",i,perguntas);
+    }
+
+    return 0;
+}
