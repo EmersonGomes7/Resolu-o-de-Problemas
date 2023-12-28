@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+   int bolinhas,galhos,media;
+   scanf("%d%d",&bolinhas,&galhos);
+   if((galhos/2)<=bolinhas)
+        printf("Amelia tem todas bolinhas!\n");
+    else{
+        if(galhos%2==0){
+            printf("Faltam %d bolinha(s)\n",((galhos/2)-bolinhas));
+        }
+        else{
+            media=galhos/2;
+            printf("Faltam %d bolinha(s)\n",media-bolinhas);
+        }
+    }
+    return 0;
+}
