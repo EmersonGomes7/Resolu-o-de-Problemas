@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    double ano1,ano2,acumulado;
+    scanf("%lf%lf",&ano1,&ano2);
+    
+    ano1=((ano1/100)+1)*100;
+
+    ano2=(ano2/100)*ano1;
+    acumulado=ano2+ano1;
+    
+    printf("%.6lf\n",acumulado-100);
+
+    return 0;
+}
