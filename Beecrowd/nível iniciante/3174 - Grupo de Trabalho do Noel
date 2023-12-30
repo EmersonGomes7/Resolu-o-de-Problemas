@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   int n,horas,horasBonecos=0,horasArquitetos=0,horasMusicos=0,horasDesenhistas=0;
+   char nome[15],grupo[15];
+   scanf("%d",&n);
+   for(int i=0;i<n;i++){
+    scanf("%s %s %d", nome, grupo, &horas);
+    if(grupo[0]=='b'){
+        horasBonecos+=horas;
+    }else if(grupo[0]=='a'){
+        horasArquitetos+=horas;
+    }else if(grupo[0]=='m'){
+        horasMusicos+=horas;
+    }else{
+        horasDesenhistas+=horas;
+    }
+   }
+   printf("%d\n",(horasBonecos/8)+(horasArquitetos/4)+(horasMusicos/6)+(horasDesenhistas/12));
+    return 0;
+}
