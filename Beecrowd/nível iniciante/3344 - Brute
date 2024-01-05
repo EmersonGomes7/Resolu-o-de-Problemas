@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+int calcularMaior(int x){
+    if(x==20 || x==30 || x==40 || x==80){
+        return 6;
+    }else if(x==50 || x==60 || x==90){
+        return 5;
+    }else if(x==70){
+        return 7;
+    }else if(x==100){
+        return 10;
+    }
+    
+}
+int calcularMenor(int x){
+    if(x==0){
+        return 0;
+    }
+    else if(x==2 || x==1 || x==6 || x==10){
+        return 3;
+    }else if(x==3 || x==4 || x==5 || x==9){
+        return 4;
+    }else if(x==3 || x==7 || x==8 || x==20){
+        return 5;
+    }else if(x==11 || x==12){
+        return 6;
+    }else if(x==16){
+        return 7;
+    }else if(x==13 || x==14 || x==15 || x==18 || x==19){
+        return 8;
+    }else if(x==17){
+        return 9;
+    }
+    
+}
+int recursiva(int x){
+    int y,z;
+    if(x>20){
+        z=(x/10)*10;
+        x=x-z;
+       y=calcularMaior(z)+calcularMenor(x);
+       if(z!=20 && z!=30 && z!=40 && z!=50 && z!=60 && z!=70 && z!=80 && z!=90){
+        y++;
+       }
+    }else{
+        y=calcularMenor(x);
+    } 
+    return y;
+}
+
+int main() {
+    int x,y;
+    scanf("%d",&x);
+    for(int i=0;i<1000;i++){
+        y=recursiva(x);
+        x=y;
+        if(x==4)
+            break;
+    }
+    printf("%d\n",x);
+    return 0;
+}
