@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <string.h>
+
+int verificarVizinho(char entrada[],char x){
+   if((((entrada[1]+2)==entrada[4]) && entrada[3]==x) || ((entrada[1]-2)==entrada[4] && entrada[3]==x)){
+            return 1;
+        }else
+            return 0;
+}
+int verificarVizinhoDoVizinho(char entrada[],char x){
+    if((((entrada[1]+1)==entrada[4]) && entrada[3]==x) || (((entrada[1]-1)==entrada[4]) && entrada[3]==x)){
+            return 1;
+        }else
+            return 0;
+}
+int main() {
+    char entrada[6];
+    int valido=0;
+    fgets(entrada,sizeof(entrada),stdin);
+    if(entrada[0]=='a'){
+        if(verificarVizinho(entrada,'b') ||verificarVizinhoDoVizinho(entrada,'c')){
+            valido++;
+        }
+    }else if(entrada[0]=='b'){
+        if(verificarVizinho(entrada,'a') || verificarVizinho(entrada,'c') ||verificarVizinhoDoVizinho(entrada,'d')){
+            valido++;
+        }
+    }else if(entrada[0]=='c'){
+        if(verificarVizinho(entrada,'b')||verificarVizinho(entrada,'d') ||verificarVizinhoDoVizinho(entrada,'a') ||verificarVizinhoDoVizinho(entrada,'e')){
+            valido++;
+        }
+    }else if(entrada[0]=='d'){
+        if(verificarVizinho(entrada,'c')||verificarVizinho(entrada,'e') ||verificarVizinhoDoVizinho(entrada,'f') || verificarVizinhoDoVizinho(entrada,'b')){
+            valido++;
+        }
+    }else if(entrada[0]=='e'){
+        if(verificarVizinho(entrada,'d') ||verificarVizinho(entrada,'f') ||verificarVizinhoDoVizinho(entrada,'g') ||verificarVizinhoDoVizinho(entrada,'c') ){
+            valido++;
+        }
+    }else if(entrada[0]=='f'){
+        if(verificarVizinho(entrada,'g') ||verificarVizinho(entrada,'e') ||verificarVizinhoDoVizinho(entrada,'h') ||verificarVizinhoDoVizinho(entrada,'d') ){
+            valido++;
+        }
+    }else if(entrada[0]=='g'){
+        if(verificarVizinho(entrada,'f') ||verificarVizinho(entrada,'h') || verificarVizinhoDoVizinho(entrada,'e')){
+            valido++;
+        }
+    }else if(entrada[0]=='h'){
+        if(verificarVizinho(entrada,'g') || verificarVizinhoDoVizinho(entrada,'h')){
+            valido++;
+        }
+    }
+    if(valido>0)
+        printf("VALIDO\n");
+    else
+        printf("INVALIDO\n");
+    return 0;
+}
