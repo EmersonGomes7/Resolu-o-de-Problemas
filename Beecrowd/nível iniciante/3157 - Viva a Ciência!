@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char falacia[281];
+    fgets(falacia,sizeof(falacia),stdin);
+    strcpy(falacia,"Nao se refuta ciencia com opiniao");
+    printf("%s\n",falacia);
+    return 0;
+}
