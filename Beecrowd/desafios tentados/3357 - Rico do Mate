@@ -1,0 +1,134 @@
+//Wrong answer (45%)
+//o tipo de dado double não conseguiu representar o número finitamente
+//saida esperada: Bob 0.2   ; minha saída 0.2
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+struct pessoa{
+    char nome[13];
+    double qtdNaTermica;
+    float qtdCuia;
+};
+typedef struct pessoa Pessoa;
+
+
+int main() {
+    int qtdPessoas;
+    double volumeCuia,volumeGarrafa;
+    char nomes[130];
+
+    scanf("%d%lf%lf",&qtdPessoas,&volumeGarrafa,&volumeCuia);
+    fflush(stdin);
+
+    
+    Pessoa **lista = malloc(qtdPessoas * sizeof(Pessoa *));
+    
+    for (int i = 0; i < qtdPessoas; i++) {
+        lista[i] = malloc(sizeof(Pessoa));
+        lista[i]->nome[0]='\0';
+        lista[i]->nome[1]='\0';
+        lista[i]->nome[2]='\0';
+        lista[i]->nome[3]='\0';
+        lista[i]->nome[4]='\0';
+        lista[i]->nome[5]='\0';
+        lista[i]->nome[6]='\0';
+        lista[i]->nome[7]='\0';
+        lista[i]->nome[8]='\0';
+        lista[i]->nome[9]='\0';
+        lista[i]->nome[10]='\0';
+        lista[i]->nome[11]='\0';
+        lista[i]->nome[12]='\0';
+    }
+    
+    fgets(nomes,sizeof(nomes),stdin);
+    for(int i=0;i<(int)sizeof(nomes);i++){
+        if(nomes[i]=='\n' ){
+            nomes[i]=' ';
+            nomes[i+1]='\0';
+        }
+    }
+    int i=0;
+    char nome[13];
+    nome[0]='\0';
+    nome[1]='\0';
+    nome[2]='\0';
+    nome[3]='\0';
+    nome[4]='\0';
+    nome[5]='\0';
+    nome[6]='\0';
+    nome[7]='\0';
+    nome[8]='\0';
+    nome[9]='\0';
+    nome[10]='\0';
+    nome[11]='\0';
+    nome[12]='\0';
+    nome[12]='\0';
+
+    while(nomes[i]!='\0'){ 
+        
+        if(nomes[i]!=' '){
+
+            if(strlen(nome)==0){
+                //strcpy(nome,"\0\0\0\0\0\0\0\0\0\0\0\0");
+                nome[strlen(nome)]=nomes[i];
+                nome[strlen(nome)+1]='\0';
+                //nomes[i]='\0';
+
+            }else if(strlen(nome)<12){
+                nome[strlen(nome)]=nomes[i];
+                nome[strlen(nome)+1]='\0';
+               // nomes[i]='\0';
+            }
+            
+        }else{
+            int j=0;
+            while(j<qtdPessoas){
+                if(strlen(lista[j]->nome) > 0){
+                    j++;
+                }else{
+                    strcpy(lista[j]->nome,nome);
+                    //strcpy(nome,"\0\0\0\0\0\0\0\0\0\0\0\0");
+                    nome[0]='\0';
+                    nome[1]='\0';
+                    nome[2]='\0';
+                    nome[3]='\0';
+                    nome[4]='\0';
+                    nome[5]='\0';
+                    nome[6]='\0';
+                    nome[7]='\0';
+                    nome[8]='\0';
+                    nome[9]='\0';
+                    nome[10]='\0';
+                    nome[11]='\0';
+                    nome[12]='\0';
+                    nome[12]='\0';
+                
+                    j++;
+                }
+            }
+        }
+              
+        i++;
+    }
+    //percorrer o vetor:
+    int x=0;
+    do{
+        lista[x]->qtdNaTermica=volumeGarrafa;
+        volumeGarrafa-=volumeCuia;
+        if((lista[x]->qtdNaTermica) <= volumeCuia)
+            break;
+        else if(x==(qtdPessoas-1))
+            x=0;
+        else
+            x++;
+    }while(1);
+    
+    printf("%s %.1lf\n",lista[x]->nome,lista[x]->qtdNaTermica);
+    
+    for (int i = 0; i < qtdPessoas; i++) {
+        free(lista[i]); 
+    }
+    free(lista); 
+    return 0;
+}
