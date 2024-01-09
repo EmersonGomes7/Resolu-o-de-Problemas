@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int x,y,aux=0;
+    scanf("%d%d",&x,&y);
+    
+    int i=1;
+    while(i<=y){
+        if(aux>0)
+            break;
+        for(int j=1;j<=x;j++){
+            if(j!=x){
+                printf("%d ",i);
+            }else{
+                printf("%d\n",i);
+            }
+            i++;
+            if(i==(y+1)){
+                aux++;
+                break;
+            }
+                
+        }
+    }
+    return 0;
+}
