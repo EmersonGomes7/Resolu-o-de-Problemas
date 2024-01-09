@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n,pA,pB,anos=0,aux=0;
+    double tA,tB;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        scanf("%d %d %lf %lf",&pA,&pB,&tA,&tB);
+        while(pA<=pB){
+            pA=pA+((tA*pA)/100);
+            pA=floor(pA);
+            pB=pB+((tB*pB)/100);
+            pB=floor(pB);
+            anos++;
+            if(anos>100){
+                printf("Mais de 1 seculo.\n");
+                aux++;
+                anos=0;
+                break;
+            }
+        }
+        if(aux==0){
+            printf("%d anos.\n",anos);
+            anos=0;
+        }
+        aux=0;
+    }
+    return 0;
+}
