@@ -1,0 +1,24 @@
+public static void main(String[] args) {
+		int aux=0;
+	    double j=1,x=0;
+	    for(int z=0;z<=10;z++){
+	        for(int i=0;i<3;i++){
+	            if(((x>0.0 && x<1.0)|| (x>1.0 && x<2.0) || (x>2.0)) && (z!=10)){
+	                 System.out.format("I=%.1f J=%.1f\n",x,j);
+	                j++;       
+	            }else{
+	               // x=ceil(x);
+	                 System.out.format("I=%.0f J=%.0f\n",x,j);
+	                 j++; 
+	            }
+	            if(j==3.8 || j==4.8 || j==1.8 || j==2.8)
+	                aux++;      
+	        }
+	        if(aux>0)
+	            j=(j-3+0.2+1);
+	        else
+	            j=j-3+0.2;
+	        x+=0.2;   
+	    }
+	    
+	}
