@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int x,y,maior,menor;
+    scanf("%d %d",&x,&y);
+    if(x>y){
+        maior=x;
+        menor=y;
+    }else{
+        maior=y;
+        menor=x;
+    }
+    menor++;
+    for(menor;menor<maior;menor++){
+        if(menor%5==2 || menor%5==3)
+            printf("%d\n",menor);
+    }
+    return 0;
+}
