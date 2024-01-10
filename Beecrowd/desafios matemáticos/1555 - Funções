@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int n,x,y;
+    float beto=0,rafa=0,carlos=0;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        scanf("%d %d",&x,&y);
+        beto=2*(x*x)+(5*y)*(5*y);
+        rafa=(3*x)*(3*x)+y*y;
+        carlos=(-100*x) + (y*y*y);
+
+        if(rafa>beto && rafa>carlos){
+            printf("Rafael ganhou\n");
+        }  
+        else if(carlos>beto && carlos>rafa){
+            printf("Carlos ganhou\n");
+        }else if(beto>rafa && beto >carlos){
+            printf("Beto ganhou\n");
+        }
+    }  
+    return 0;
+}
