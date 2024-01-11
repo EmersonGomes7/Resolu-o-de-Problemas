@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num,vet[20];
+    for(int i=0;i<20;i++){
+        scanf("%d",&vet[i]);    
+    }
+    int j=19;
+    for(int i=0;i<10;i++){
+        num=vet[i];
+        vet[i]=vet[j];
+        vet[j]=num;
+        j--;
+    }
+    for(int i=0;i<20;i++){
+        printf("N[%d] = %d\n",i,vet[i]);
+    }
+    return 0;
+}
