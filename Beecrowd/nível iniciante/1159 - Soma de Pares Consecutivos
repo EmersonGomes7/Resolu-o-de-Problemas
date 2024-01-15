@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int n,soma=0;
+    while(1){
+        scanf("%d",&n);
+        if(n==0)    
+            break;
+        if(n%2==0){
+            for(int i=0;i<5;i++){
+                soma+=n;
+                n+=2;
+            }
+        }else{
+            n++;
+            for(int i=0;i<5;i++){
+                soma+=n;
+                n+=2;
+            }
+        }
+        printf("%d\n",soma);
+        soma=0;
+    }
+    
+    return 0;
+}
